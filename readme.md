@@ -2,8 +2,8 @@
 
 មេរៀន និងការអនុវត្ត React.js ពីកម្រិតដំបូងដល់កម្រិតខ្ពស់ (A comprehensive step-by-step React.js master guide with definitions, practical examples, exercises, and answer solutions in English & Khmer).
 
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/PheaRak77/DailyTasks)
-[![Open in CodeSandbox](https://img.shields.io/badge/Codesandbox-Live_Playground-blue?style=for-the-badge&logo=codesandbox)](https://githubbox.com/PheaRak77/DailyTasks)
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact)
+[![Open in CodeSandbox](https://img.shields.io/badge/Codesandbox-Live_Playground-blue?style=for-the-badge&logo=codesandbox)](https://githubbox.com/PheaRak77/DailyTasks/tree/master/RouterinReact)
 
 ---
 
@@ -13,16 +13,16 @@ Any visitor on GitHub can click the links below to test each exercise live direc
 
 | # | Exercise / លំហាត់ | Topic / ប្រធានបទ | 📖 View Code | 🚀 1-Click Live Test |
 |:---:|---|---|:---:|:---:|
-| **Ex 1** | **Profile Card** | Components & JSX | [Read Code](#chapter-1-components--jsx-សមាសភាគ-និង-jsx) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
-| **Ex 2** | **Product Badge** | Props & Children | [Read Code](#chapter-2-props--children-ការបញ្ជូនទិន្នន័យតាម-props) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
-| **Ex 3** | **Todo List** | State (`useState`) | [Read Code](#chapter-3-state-management-with-usestate-ការគ្រប់គ្រង-state) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
-| **Ex 4** | **Student Filter** | Conditional & Lists | [Read Code](#chapter-4-conditional-rendering--lists-ការបង្ហាញ-ui-តាមលក្ខខណ្ឌ-និង-lists) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
-| **Ex 5** | **Password Validation** | Form Handling | [Read Code](#chapter-5-form-handling-ការគ្រប់គ្រង-form--user-input) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
-| **Ex 6** | **Live Timer** | `useEffect` & Cleanup | [Read Code](#chapter-6-side-effects--api-fetching-with-useeffect--axios-ការទាញទិន្នន័យពី-api) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
-| **Ex 7** | **Router & Pages** | React Router DOM | [Read Code](#chapter-7-react-router-dom-ការរៀបចំ-routing--navigation) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
-| **Ex 8** | **Auth Context** | Global State Context API | [Read Code](#chapter-8-context-api-for-global-state-ការចែករំលែក-global-state) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
-| **Ex 9** | **useLocalStorage / useAxios** | Custom Hooks | [Read Code](#chapter-9-custom-hooks-ការបង្កើត-hook-ផ្ទាល់ខ្លួន) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
-| **Ex 10** | **Performance Demo** | `useMemo` & `useCallback` | [Read Code](#chapter-10-performance-optimization-usememo-usecallback-reactmemo) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 1** | **Profile Card** | Components & JSX | [Read Code](#chapter-1-components--jsx-សមាសភាគ-និង-jsx) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
+| **Ex 2** | **Product Badge** | Props & Children | [Read Code](#chapter-2-props--children-ការបញ្ជូនទិន្នន័យតាម-props) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
+| **Ex 3** | **Todo List** | State (`useState`) | [Read Code](#chapter-3-state-management-with-usestate-ការគ្រប់គ្រង-state) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
+| **Ex 4** | **Student Filter** | Conditional & Lists | [Read Code](#chapter-4-conditional-rendering--lists-ការបង្ហាញ-ui-តាមលក្ខខណ្ឌ-និង-lists) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
+| **Ex 5** | **Password Validation** | Form Handling | [Read Code](#chapter-5-form-handling-ការគ្រប់គ្រង-form--user-input) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
+| **Ex 6** | **Live Timer** | `useEffect` & Cleanup | [Read Code](#chapter-6-side-effects--api-fetching-with-useeffect--axios-ការទាញទិន្នន័យពី-api) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
+| **Ex 7** | **Router & Pages** | React Router DOM | [Read Code](#chapter-7-react-router-dom-ការរៀបចំ-routing--navigation) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
+| **Ex 8** | **Auth Context** | Global State Context API | [Read Code](#chapter-8-context-api-for-global-state-ការចែករំលែក-global-state) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
+| **Ex 9** | **useLocalStorage / useAxios** | Custom Hooks | [Read Code](#chapter-9-custom-hooks-ការបង្កើត-hook-ផ្ទាល់ខ្លួន) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
+| **Ex 10** | **Performance Demo** | `useMemo` & `useCallback` | [Read Code](#chapter-10-performance-optimization-usememo-usecallback-reactmemo) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact) |
 
 ---
 

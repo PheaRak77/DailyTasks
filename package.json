@@ -1,0 +1,11 @@
+{
+  "name": "fullstack-pern-learning",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Fullstack PERN & React Master Course",
+  "scripts": {
+    "dev": "npm --prefix RouterinReact run dev",
+    "start": "npm --prefix RouterinReact run dev",
+    "build": "npm --prefix RouterinReact run build"
+  }
+}
