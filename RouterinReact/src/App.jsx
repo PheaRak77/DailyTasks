@@ -4,6 +4,8 @@ import { HeroPage, AboutPage, ContactPage } from "./components";
 // import Users from "./DynamicRoutes/Users";
 import Material from "./components/Material";
 import MaterailDetails from "./components/MaterailDetails";
+import ExercisePlayground from "./components/ExercisePlayground";
+
 function App() {
   return (
     <div>
@@ -15,6 +17,7 @@ function App() {
           <Route path="/contact" element={<ContactPage />} />
           <Route path="/product" element={<Material />} />
           <Route path="/product/:id" element={<MaterailDetails />} />
+          <Route path="/exercises" element={<ExercisePlayground />} />
         </Route>
       </Routes>
     </div>

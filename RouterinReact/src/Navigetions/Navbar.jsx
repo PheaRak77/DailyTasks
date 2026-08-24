@@ -6,6 +6,7 @@ function Navbar() {
     { path: "/about", label: "About" },
     { path: "/contact", label: "Contact" },
     { path: "/product", label: "Product" },
+    { path: "/exercises", label: "🧪 Exercises" },
   ];
   return (
     <nav className="navbar bg-body-tertiary mb-5">

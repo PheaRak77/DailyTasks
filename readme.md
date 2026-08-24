@@ -2,6 +2,28 @@
 
 មេរៀន និងការអនុវត្ត React.js ពីកម្រិតដំបូងដល់កម្រិតខ្ពស់ (A comprehensive step-by-step React.js master guide with definitions, practical examples, exercises, and answer solutions in English & Khmer).
 
+[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/PheaRak77/DailyTasks)
+[![Open in CodeSandbox](https://img.shields.io/badge/Codesandbox-Live_Playground-blue?style=for-the-badge&logo=codesandbox)](https://githubbox.com/PheaRak77/DailyTasks)
+
+---
+
+## ⚡ One-Click Online Exercise Demos (មើលលទ្ធផលផ្ទាល់លើ GitHub)
+
+Any visitor on GitHub can click the links below to test each exercise live directly in their browser without installing anything:
+
+| # | Exercise / លំហាត់ | Topic / ប្រធានបទ | 📖 View Code | 🚀 1-Click Live Test |
+|:---:|---|---|:---:|:---:|
+| **Ex 1** | **Profile Card** | Components & JSX | [Read Code](#chapter-1-components--jsx-សមាសភាគ-និង-jsx) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 2** | **Product Badge** | Props & Children | [Read Code](#chapter-2-props--children-ការបញ្ជូនទិន្នន័យតាម-props) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 3** | **Todo List** | State (`useState`) | [Read Code](#chapter-3-state-management-with-usestate-ការគ្រប់គ្រង-state) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 4** | **Student Filter** | Conditional & Lists | [Read Code](#chapter-4-conditional-rendering--lists-ការបង្ហាញ-ui-តាមលក្ខខណ្ឌ-និង-lists) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 5** | **Password Validation** | Form Handling | [Read Code](#chapter-5-form-handling-ការគ្រប់គ្រង-form--user-input) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 6** | **Live Timer** | `useEffect` & Cleanup | [Read Code](#chapter-6-side-effects--api-fetching-with-useeffect--axios-ការទាញទិន្នន័យពី-api) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 7** | **Router & Pages** | React Router DOM | [Read Code](#chapter-7-react-router-dom-ការរៀបចំ-routing--navigation) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 8** | **Auth Context** | Global State Context API | [Read Code](#chapter-8-context-api-for-global-state-ការចែករំលែក-global-state) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 9** | **useLocalStorage / useAxios** | Custom Hooks | [Read Code](#chapter-9-custom-hooks-ការបង្កើត-hook-ផ្ទាល់ខ្លួន) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+| **Ex 10** | **Performance Demo** | `useMemo` & `useCallback` | [Read Code](#chapter-10-performance-optimization-usememo-usecallback-reactmemo) | [▶️ Test Live](https://stackblitz.com/github/PheaRak77/DailyTasks?file=RouterinReact/src/components/ExercisePlayground.jsx) |
+
 ---
 
 ## 📑 តារាងមាតិកា / Table of Contents
@@ -11,10 +33,10 @@
 - [Chapter 3: State Management with `useState` (ការគ្រប់គ្រង State)](#chapter-3-state-management-with-usestate-ការគ្រប់គ្រង-state)
 - [Chapter 4: Conditional Rendering & Lists (ការបង្ហាញ UI តាមលក្ខខណ្ឌ និង Lists)](#chapter-4-conditional-rendering--lists-ការបង្ហាញ-ui-តាមលក្ខខណ្ឌ-និង-lists)
 - [Chapter 5: Form Handling (ការគ្រប់គ្រង Form & User Input)](#chapter-5-form-handling-ការគ្រប់គ្រង-form--user-input)
-- [Chapter 6: Side Effects & API Fetching with `useEffect` (ការទាញទិន្នន័យពី API)](#chapter-6-side-effects--api-fetching-with-useeffect-ការទាញទិន្នន័យពី-api)
+- [Chapter 6: Side Effects & API Fetching with `useEffect` + Axios (ការទាញទិន្នន័យពី API)](#chapter-6-side-effects--api-fetching-with-useeffect--axios-ការទាញទិន្នន័យពី-api)
 - [Chapter 7: React Router DOM (ការរៀបចំ Routing & Navigation)](#chapter-7-react-router-dom-ការរៀបចំ-routing--navigation)
 - [Chapter 8: Context API for Global State (ការចែករំលែក Global State)](#chapter-8-context-api-for-global-state-ការចែករំលែក-global-state)
-- [Chapter 9: Custom Hooks (ការបង្កើត Hook ផ្ទាល់ខ្លួន)](#chapter-9-custom-hooks-ការបង្កើត-hook-ផ្ទាល់ខ្លួន)
+- [Chapter 9: Custom Hooks with Axios (ការបង្កើត Hook ផ្ទាល់ខ្លួន)](#chapter-9-custom-hooks-ការបង្កើត-hook-ផ្ទាល់ខ្លួន)
 - [Chapter 10: Performance Optimization (`useMemo`, `useCallback`, `React.memo`)](#chapter-10-performance-optimization-usememo-usecallback-reactmemo)
 - [Chapter 11: Fullstack PERN Roadmap & Best Practices](#chapter-11-fullstack-pern-roadmap--best-practices)
 
@@ -57,8 +79,9 @@ export default WelcomeCard;
 **Task**: បង្កើត Component ឈ្មោះ `ProfileCard` ដែលបង្ហាញរូបភាព Avatar, ឈ្មោះ (Name), អ៊ីមែល (Email), និងជំនាញ (Skills)។
 
 <details>
-<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ និង UI Result / View Answer Solution & UI Output</b></summary>
 
+#### 💻 កូដដំណោះស្រាយ (Source Code):
 ```jsx
 // src/components/ProfileCard.jsx
 function ProfileCard() {
@@ -88,6 +111,15 @@ function ProfileCard() {
 }
 
 export default ProfileCard;
+```
+
+#### 🖥️ លទ្ធផល UI លើអេក្រង់ (Rendered UI Preview):
+```text
++-------------------------------------------------------------------+
+|  [ 👤 Avatar ]   Kosal Chan                                       |
+|                  kosal@example.com                                |
+|                  [ React & Node.js ]                              |
++-------------------------------------------------------------------+
 ```
 </details>
 
@@ -146,8 +178,9 @@ function App() {
 **Task**: បង្កើត Component ឈ្មោះ `ProductBadge` ដែលទទួល Props: `title` (string), `price` (number), និង `isSpecial` (boolean)។ ប្រសិនបើ `isSpecial` ជា `true` ត្រូវបង្ហាញ Badge ពណ៌ក្រហម "Discount 20%!".
 
 <details>
-<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ និង UI Result / View Answer Solution & UI Output</b></summary>
 
+#### 💻 កូដដំណោះស្រាយ (Source Code):
 ```jsx
 // src/components/ProductBadge.jsx
 function ProductBadge({ title, price, isSpecial }) {
@@ -165,6 +198,14 @@ function ProductBadge({ title, price, isSpecial }) {
 }
 
 export default ProductBadge;
+```
+
+#### 🖥️ លទ្ធផល UI លើអេក្រង់ (Rendered UI Preview):
+```text
++------------------------------------+  +------------------------------------+
+| Mechanical Keyboard [Discount 20%!] |  | Wireless Mouse                     |
+| $79                                |  | $29                                |
++------------------------------------+  +------------------------------------+
 ```
 </details>
 
@@ -229,8 +270,9 @@ function CounterApp() {
 **Task**: បង្កើត `TodoList` Component ដែលអនុញ្ញាតឱ្យ User បញ្ចូល Task ថ្មីចូលក្នុង Array State និងអាច Delete Task តាមរយៈប៊ូតុង Remove។
 
 <details>
-<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ និង UI Result / View Answer Solution & UI Output</b></summary>
 
+#### 💻 កូដដំណោះស្រាយ (Source Code):
 ```jsx
 import { useState } from 'react';
 
@@ -286,6 +328,17 @@ function TodoList() {
 }
 
 export default TodoList;
+```
+
+#### 🖥️ លទ្ធផល UI លើអេក្រង់ (Rendered UI Preview):
+```text
++-------------------------------------------------------------+
+|  បញ្ជីការងារត្រូវធ្វើ (Todo List)                                |
+|  [ បញ្ចូលការងារថ្មី...              ]  [ + បន្ថែម ]            |
+|  ---------------------------------------------------------  |
+|  • រៀន React                                    [ ✕ លុប ]   |
+|  • រៀន Node.js                                  [ ✕ លុប ]   |
++-------------------------------------------------------------+
 ```
 </details>
 
@@ -347,8 +400,9 @@ function ProductStatusList() {
 **Task**: បង្កើត Component ឈ្មោះ `StudentFilter` ដែលមាន List សិស្សដែលមានពិន្ទុ (Score)។ បង្កើតប៊ូតុងមួយសម្រាប់ Switch រវាង "បង្ហាញទាំងអស់ (Show All)" និង "បង្ហាញតែសិស្សដែលប្រឡងជាប់ពិន្ទុ >= 50 (Show Passed Only)"។
 
 <details>
-<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ និង UI Result / View Answer Solution & UI Output</b></summary>
 
+#### 💻 កូដដំណោះស្រាយ (Source Code):
 ```jsx
 import { useState } from 'react';
 
@@ -392,6 +446,17 @@ function StudentFilter() {
 }
 
 export default StudentFilter;
+```
+
+#### 🖥️ លទ្ធផល UI លើអេក្រង់ (Rendered UI Preview):
+```text
++-------------------------------------------------------------+
+|  បញ្ជីពិន្ទុសិស្ស                                              |
+|  [ 🔘 បង្ហាញតែអ្នកជាប់ (Passed Only) ]                           |
+|  ---------------------------------------------------------  |
+|  • Vannak                                    [ 85 ពិន្ទុ (ជាប់) ] |
+|  • Sreypov                                   [ 92 ពិន្ទុ (ជាប់) ] |
++-------------------------------------------------------------+
 ```
 </details>
 
@@ -485,8 +550,9 @@ function RegisterForm() {
 **Task**: បង្កើត Form សម្រាប់ផ្ទៀងផ្ទាត់ Password (Password Validation)៖ ប្រសិនបើ Password តិចជាង 6 តួអក្សរ ត្រូវបង្ហាញ Error Message ពណ៌ក្រហមថា "Password ត្រូវមានយ៉ាងតិច 6 ខ្ទង់"។
 
 <details>
-<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ និង UI Result / View Answer Solution & UI Output</b></summary>
 
+#### 💻 កូដដំណោះស្រាយ (Source Code):
 ```jsx
 import { useState } from 'react';
 
@@ -524,24 +590,34 @@ function PasswordValidationForm() {
 
 export default PasswordValidationForm;
 ```
+
+#### 🖥️ លទ្ធផល UI លើអេក្រង់ (Rendered UI Preview):
+```text
++-------------------------------------------------------------+
+|  បញ្ចូល Password                                             |
+|  [ ••••••               ]                                   |
+|  ❌ Password ត្រូវមានយ៉ាងតិច 6 ខ្ទង់!                          |
+|  [      បញ្ជាក់ (Verify)       ]                             |
++-------------------------------------------------------------+
+```
 </details>
 
 ---
 
-## Chapter 6: Side Effects & API Fetching with `useEffect` (ការទាញទិន្នន័យពី API)
+## Chapter 6: Side Effects & API Fetching with `useEffect` + Axios (ការទាញទិន្នន័យពី API)
 
 ### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
-- **English**: `useEffect` lets you synchronize a component with external systems (APIs, network requests, subscriptions, DOM manipulation).
+- **English**: `useEffect` lets you synchronize a component with external systems (APIs, network requests, timers, subscriptions). **Axios** is a promise-based HTTP client that simplifies API calls (automatically transforms JSON, has better error handling, and supports request cancellation).
+  - Install Axios: `npm i axios`
   - `[]` (Empty dependency array): Runs **only once** on component mount.
   - `[stateVar]`: Runs on mount AND whenever `stateVar` changes.
-  - Cleanup function: Returned inside `useEffect` to clear timers or subscriptions.
-- **ភាសាខ្មែរ**: `useEffect` ប្រើប្រាស់សម្រាប់ដំណើរការ **Side Effects** ដូចជាការទាញទិន្នន័យពី Backend API (Data Fetching), ការកំណត់ Timer, ឬការកែប្រែ DOM។
-  - ប្រសិនបើដាក់ `[]` (Array ទទេ)៖ វានឹងដំណើរការតែ **ម្តងគត់** ពេលបើកទំព័រដំបូង (Mount)។
-  - ប្រសិនបើដាក់ `[id]`៖ វានឹងដំណើរការរាល់ពេលដែលតម្លៃ `id` ផ្លាស់ប្តូរ។
+  - Cleanup function: Returned inside `useEffect` to cancel requests or clear timers.
+- **ភាសាខ្មែរ**: `useEffect` ប្រើប្រាស់សម្រាប់ដំណើរការ **Side Effects** ដូចជាការទាញទិន្នន័យពី Backend API (Data Fetching), ការកំណត់ Timer, ឬការកែប្រែ DOM។ ការប្រើប្រាស់ **Axios** (`npm i axios`) ជួយឱ្យការហៅ API កាន់តែងាយស្រួល ព្រោះវា parse JSON ដោយស្វ័យប្រវត្តិ (Auto JSON parsing) និងគ្រប់គ្រង Error បានល្អជាង `fetch` ធម្មតា។
 
-### 2. ឧទាហរណ៍កូដ / Code Example
+### 2. ឧទាហរណ៍កូដ: ទាញទិន្នន័យដោយប្រើ Axios / Code Example with Axios
 ```jsx
 import { useState, useEffect } from 'react';
+import axios from 'axios';
 
 function UserList() {
   const [users, setUsers] = useState([]);
@@ -549,33 +625,44 @@ function UserList() {
   const [error, setError] = useState(null);
 
   useEffect(() => {
-    // Fetch data from dummy API
-    fetch('https://jsonplaceholder.typicode.com/users')
-      .then((res) => {
-        if (!res.ok) throw new Error("ទាញទិន្នន័យមិនបានសម្រេច (Failed to fetch)");
-        return res.json();
-      })
-      .then((data) => {
-        setUsers(data);
+    // 1. Create AbortController to cancel request if component unmounts
+    const controller = new AbortController();
+
+    const fetchUsers = async () => {
+      try {
+        setLoading(true);
+        // Axios automatically parses JSON response into response.data
+        const response = await axios.get('https://jsonplaceholder.typicode.com/users', {
+          signal: controller.signal
+        });
+        setUsers(response.data);
+        setError(null);
+      } catch (err) {
+        if (!axios.isCancel(err)) {
+          setError(err.response?.data?.message || err.message || "Something went wrong");
+        }
+      } finally {
         setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
+      }
+    };
+
+    fetchUsers();
+
+    // 2. Cleanup function
+    return () => controller.abort();
   }, []); // Run once on mount
 
-  if (loading) return <p className="p-4 text-blue-500 font-bold">កំពុងទាញទិន្នន័យ (Loading...)...</p>;
+  if (loading) return <p className="p-4 text-blue-500 font-bold">កំពុងទាញទិន្នន័យ (Loading with Axios...)...</p>;
   if (error) return <p className="p-4 text-red-500 font-bold">កំហុស (Error): {error}</p>;
 
   return (
     <div className="p-4">
-      <h2 className="text-xl font-bold mb-3">បញ្ជីឈ្មោះ Users ពី API</h2>
+      <h2 className="text-xl font-bold mb-3">បញ្ជីឈ្មោះ Users ពី API (Axios)</h2>
       <ul className="space-y-2">
         {users.map((user) => (
           <li key={user.id} className="p-3 border rounded shadow-sm bg-white">
             <h4 className="font-bold">{user.name}</h4>
-            <p className="text-sm text-gray-500">Email: {user.email} | City: {user.address.city}</p>
+            <p className="text-sm text-gray-500">Email: {user.email} | City: {user.address?.city}</p>
           </li>
         ))}
       </ul>
@@ -590,8 +677,9 @@ function UserList() {
 **Task**: បង្កើត Component ឈ្មោះ `LiveTimer` ដែលប្រើ `useEffect` ដើម្បីបង្ហាញនាឡិការាប់វិនាទី (Timer) កើនឡើងរាល់ 1 វិនាទីម្តង (`setInterval`) ហើយត្រូវមាន Cleanup function (`clearInterval`) នៅពេល Component unmount ដើម្បីកុំឱ្យ memory leak។
 
 <details>
-<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ និង UI Result / View Answer Solution & UI Output</b></summary>
 
+#### 💻 កូដដំណោះស្រាយ (Source Code):
 ```jsx
 import { useState, useEffect } from 'react';
 
@@ -620,6 +708,14 @@ function LiveTimer() {
 }
 
 export default LiveTimer;
+```
+
+#### 🖥️ លទ្ធផល UI លើអេក្រង់ (Rendered UI Preview):
+```text
++-------------------------------------------------------------+
+|  ⏱️ នាឡិការាប់វិនាទី (Timer)                                  |
+|  >> 12 វិនាទី                                               |
++-------------------------------------------------------------+
 ```
 </details>
 
@@ -850,66 +946,82 @@ export function AuthStatus() {
 ## Chapter 9: Custom Hooks (ការបង្កើត Hook ផ្ទាល់ខ្លួន)
 
 ### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
-- **English**: A **Custom Hook** is a JavaScript function whose name starts with `use` (e.g., `useFetch`, `useLocalStorage`) and that can call other React hooks. Custom hooks allow you to extract and reuse stateful logic across multiple components without duplicating code.
-- **ភាសាខ្មែរ**: **Custom Hook** គឺជា JavaScript Function ដែលចាប់ផ្ដើមឈ្មោះដោយពាក្យ `use` (ដូចជា `useFetch`, `useWindowSize`) និងអាចហៅ React Hooks ផ្សេងៗទៀតបាន។ Custom Hook ជួយយើងទាញយក Logic ស្មុគស្មាញយកមកប្រើឡើងវិញ (Reusable Logic) ដោយមិនបាច់សរសេរកូដដដែលៗ។
+- **English**: A **Custom Hook** is a JavaScript function whose name starts with `use` (e.g., `useAxios`, `useLocalStorage`) and that can call other React hooks. Custom hooks allow you to extract and reuse stateful logic across multiple components without duplicating code.
+- **ភាសាខ្មែរ**: **Custom Hook** គឺជា JavaScript Function ដែលចាប់ផ្ដើមឈ្មោះដោយពាក្យ `use` (ដូចជា `useAxios`, `useLocalStorage`) និងអាចហៅ React Hooks ផ្សេងៗទៀតបាន។ Custom Hook ជួយយើងទាញយក Logic ស្មុគស្មាញយកមកប្រើឡើងវិញ (Reusable Logic) ដោយមិនបាច់សរសេរកូដដដែលៗ។
 
-### 2. ឧទាហរណ៍កូដ: `useFetch` Hook / Code Example
+### 2. ឧទាហរណ៍កូដ: `useAxios` Hook / Code Example with Axios
 ```jsx
-// src/hooks/useFetch.js
-import { useState, useEffect } from 'react';
+// src/hooks/useAxios.js
+import { useState, useEffect, useCallback } from 'react';
+import axios from 'axios';
 
-export function useFetch(url) {
+export function useAxios(url) {
   const [data, setData] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    let isMounted = true;
-    setLoading(true);
-
-    fetch(url)
-      .then(res => {
-        if (!res.ok) throw new Error("Network response was not ok");
-        return res.json();
-      })
-      .then(result => {
-        if (isMounted) {
-          setData(result);
-          setLoading(false);
-        }
-      })
-      .catch(err => {
-        if (isMounted) {
-          setError(err.message);
-          setLoading(false);
-        }
-      });
-
-    return () => { isMounted = false; };
+  const fetchData = useCallback(async (signal) => {
+    try {
+      setLoading(true);
+      setError(null);
+      const response = await axios.get(url, { signal });
+      setData(response.data);
+    } catch (err) {
+      if (!axios.isCancel(err)) {
+        setError(err.response?.data?.message || err.message || "Request failed");
+      }
+    } finally {
+      setLoading(false);
+    }
   }, [url]);
 
-  return { data, loading, error };
+  useEffect(() => {
+    const controller = new AbortController();
+    fetchData(controller.signal);
+
+    return () => controller.abort();
+  }, [fetchData]);
+
+  // Provide refetch function for manual re-fetching
+  const refetch = () => {
+    const controller = new AbortController();
+    fetchData(controller.signal);
+  };
+
+  return { data, loading, error, refetch };
 }
 ```
 
-#### How to use `useFetch` in components:
+#### How to use `useAxios` in components (របៀបប្រើក្នុង Component):
 ```jsx
-import { useFetch } from '../hooks/useFetch';
+import { useAxios } from '../hooks/useAxios';
 
 function PostsPage() {
-  const { data: posts, loading, error } = useFetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
+  const { data: posts, loading, error, refetch } = useAxios('https://jsonplaceholder.typicode.com/posts?_limit=5');
 
-  if (loading) return <p>កំពុងទាញទិន្នន័យ...</p>;
-  if (error) return <p className="text-red-500">Error: {error}</p>;
+  if (loading) return <p className="p-4 text-blue-500 font-bold">កំពុងទាញទិន្នន័យ (Loading via Axios)...</p>;
+  if (error) return <p className="p-4 text-red-500 font-bold">កំហុស (Error): {error}</p>;
 
   return (
-    <div>
-      <h2 className="text-xl font-bold mb-2">បញ្ជីអត្ថបទ (Posts)</h2>
-      {posts.map(p => (
-        <div key={p.id} className="p-3 border-b">
-          <h4 className="font-semibold">{p.title}</h4>
-        </div>
-      ))}
+    <div className="p-4">
+      <div className="flex justify-between items-center mb-3">
+        <h2 className="text-xl font-bold">បញ្ជីអត្ថបទ (Posts with Axios)</h2>
+        <button 
+          onClick={refetch}
+          className="px-3 py-1 bg-blue-600 text-white rounded text-sm hover:bg-blue-700"
+        >
+          🔄 Refresh
+        </button>
+      </div>
+
+      <div className="space-y-2">
+        {posts && posts.map(p => (
+          <div key={p.id} className="p-3 border rounded bg-white shadow-sm">
+            <h4 className="font-semibold text-gray-800">{p.title}</h4>
+            <p className="text-sm text-gray-600 mt-1">{p.body}</p>
+          </div>
+        ))}
+      </div>
     </div>
   );
 }
