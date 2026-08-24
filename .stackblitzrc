@@ -1,0 +1,6 @@
+{
+  "startCommand": "cd RouterinReact && npm run dev",
+  "env": {
+    "NODE_ENV": "development"
+  }
+}
