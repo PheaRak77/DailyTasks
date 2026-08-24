@@ -1,546 +1,223 @@
-# 🚀 Complete Fullstack React & PERN Learning Guide
+# 📘 React.js Master Course & Step-by-Step Lesson (English & ភាសាខ្មែរ)
 
-An in-depth, step-by-step master guide covering **Components**, **Props**, **State**, **React Router**, **Hooks (`useState`, `useEffect`)**, **Styling (Tailwind & Bootstrap)**, **Fullstack PERN Roadmap**, and **Essential Commands**.
-
----
-
-## 📑 Table of Contents
-
-1. [Core React Fundamentals](#1-core-react-fundamentals)
-   - [What is a Component?](#what-is-a-component)
-   - [What are Props? (Data In)](#what-are-props-data-in)
-   - [What is State? (`useState`)](#what-is-state-usestate)
-   - [State vs Props Comparison](#state-vs-props-comparison)
-2. [React Hooks Deep Dive](#2-react-hooks-deep-dive)
-   - [`useState` (Primitives, Objects, Arrays)](#1-usestate-managing-component-memory)
-   - [`useEffect` (Lifecycle, API Fetching & Cleanup)](#2-useeffect-handling-side-effects--apis)
-3. [React Router DOM (Complete Guide)](#3-react-router-dom-complete-guide)
-   - [SPA Concept](#why-react-router-spa-vs-mpa)
-   - [Setup & `<BrowserRouter>`](#step-1-installation--setup)
-   - [Route Mapping (`<Routes>`, `<Route>`)](#step-2-defining-routes-in-appjsx)
-   - [Layouts & `<Outlet />`](#step-3-nested-routes--shared-layouts-with-outlet)
-   - [Dynamic Routes & `useParams()`](#step-4-dynamic-routes-with-useparams)
-   - [Navigation: `<Link>`, `<NavLink>`, `useNavigate()`](#step-5-navigation-link-navlink-and-usenavigate)
-   - [Query Parameters (`useSearchParams`)](#step-6-query-parameters-with-usesearchparams)
-   - [404 Page (Catch-all Route)](#step-7-handling-404-not-found)
-4. [Styling Frameworks](#4-styling-frameworks)
-   - [Tailwind CSS v4 (Setup & Usage)](#tailwind-css-v4)
-   - [Bootstrap 5 (Setup & Usage)](#bootstrap-5)
-5. [Fullstack PERN Architecture & Recommendations](#5-fullstack-pern-architecture--roadmap)
-   - [What is the PERN Stack?](#what-is-pern)
-   - [Connecting React Frontend to Node/Express Backend](#connecting-react-to-express-api)
-   - [Next Steps & Recommended Learning Path](#recommended-next-topics-to-learn)
-6. [Common React Errors & Solutions](#6-common-react-bugs--how-to-fix-them)
-7. [Daily Command Line Cheat Sheet](#7-daily-command-line-cheat-sheet)
+មេរៀន និងការអនុវត្ត React.js ពីកម្រិតដំបូងដល់កម្រិតខ្ពស់ (A comprehensive step-by-step React.js master guide with definitions, practical examples, exercises, and answer solutions in English & Khmer).
 
 ---
 
-## 1. Core React Fundamentals
+## 📑 តារាងមាតិកា / Table of Contents
 
-### What is a Component?
+- [Chapter 1: Components & JSX (សមាសភាគ និង JSX)](#chapter-1-components--jsx-សមាសភាគ-និង-jsx)
+- [Chapter 2: Props & Children (ការបញ្ជូនទិន្នន័យតាម Props)](#chapter-2-props--children-ការបញ្ជូនទិន្នន័យតាម-props)
+- [Chapter 3: State Management with `useState` (ការគ្រប់គ្រង State)](#chapter-3-state-management-with-usestate-ការគ្រប់គ្រង-state)
+- [Chapter 4: Conditional Rendering & Lists (ការបង្ហាញ UI តាមលក្ខខណ្ឌ និង Lists)](#chapter-4-conditional-rendering--lists-ការបង្ហាញ-ui-តាមលក្ខខណ្ឌ-និង-lists)
+- [Chapter 5: Form Handling (ការគ្រប់គ្រង Form & User Input)](#chapter-5-form-handling-ការគ្រប់គ្រង-form--user-input)
+- [Chapter 6: Side Effects & API Fetching with `useEffect` (ការទាញទិន្នន័យពី API)](#chapter-6-side-effects--api-fetching-with-useeffect-ការទាញទិន្នន័យពី-api)
+- [Chapter 7: React Router DOM (ការរៀបចំ Routing & Navigation)](#chapter-7-react-router-dom-ការរៀបចំ-routing--navigation)
+- [Chapter 8: Context API for Global State (ការចែករំលែក Global State)](#chapter-8-context-api-for-global-state-ការចែករំលែក-global-state)
+- [Chapter 9: Custom Hooks (ការបង្កើត Hook ផ្ទាល់ខ្លួន)](#chapter-9-custom-hooks-ការបង្កើត-hook-ផ្ទាល់ខ្លួន)
+- [Chapter 10: Performance Optimization (`useMemo`, `useCallback`, `React.memo`)](#chapter-10-performance-optimization-usememo-usecallback-reactmemo)
+- [Chapter 11: Fullstack PERN Roadmap & Best Practices](#chapter-11-fullstack-pern-roadmap--best-practices)
 
-A **Component** is a reusable, self-contained building block of the user interface (UI). In modern React, components are JavaScript functions that return JSX (HTML-like syntax).
+---
 
-#### Key Rules for Components:
+## Chapter 1: Components & JSX (សមាសភាគ និង JSX)
 
-1. **Name must start with a Capital Letter**: `HeroPage`, `Navbar`, `ProductCard` (lowercase names like `<div />` or `<button />` are treated as built-in HTML tags).
-2. **Must return a single root element**: Wrap multiple tags in a `<div>` or a Fragment (`<> ... </>`).
-3. **Use `className` instead of `class`**: Because `class` is a reserved keyword in JavaScript.
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**: A **Component** is a reusable, independent piece of user interface (UI). In modern React, components are JavaScript functions that return **JSX** (JavaScript XML), allowing you to write HTML-like structure directly inside JavaScript.
+- **ភាសាខ្មែរ**: **Component** គឺជាប្លុក UI ដែលអាចប្រើឡើងវិញបាន (Reusable) និងដំណើរការដោយឯករាជ្យ។ នៅក្នុង React សម័យថ្មី Component គឺជា JavaScript Function ដែល return ចេញជា **JSX** (សរសេរកូដស្រដៀង HTML នៅក្នុង JavaScript)។
 
+#### ⚠️ ច្បាប់សំខាន់ៗរបស់ JSX / Important JSX Rules:
+1. **ឈ្មោះ Component ត្រូវតែចាប់ផ្ដើមដោយអក្សរធំ (PascalCase)** ឧទាហរណ៍៖ `UserProfile`, `NavBar` (បើប្រើ `navBar` វានឹងគិតថាជា HTML tag ធម្មតា)។
+2. **ត្រូវតែ return ធាតុ Root តែមួយគត់ (Single Root)**៖ អាចរុំដោយ `<div>` ឬ React Fragment (`<>...</>`)។
+3. **ប្រើ `className` ជំនួស `class`** និងប្រើ **`htmlFor` ជំនួស `for`**។
+
+### 2. ឧទាហរណ៍កូដ / Code Example
 ```jsx
-// src/components/Greeting.jsx
-function Greeting() {
+// src/components/WelcomeCard.jsx
+function WelcomeCard() {
+  const developerName = "Sokha";
+  const role = "Fullstack Developer";
+
   return (
-    <div className="card">
-      <h2>Welcome to My App!</h2>
-      <p>This is a reusable functional component.</p>
+    <div className="p-4 border rounded-xl shadow-md bg-white">
+      <h2 className="text-xl font-bold text-blue-600">
+        សួស្តី, {developerName}! 👋
+      </h2>
+      <p className="text-gray-600">Role: {role}</p>
     </div>
   );
 }
 
-export default Greeting;
+export default WelcomeCard;
 ```
 
 ---
 
-### What are Props? (Data In)
+### 3. លំហាត់អនុវត្តន៍ / Exercise 1
+**Task**: បង្កើត Component ឈ្មោះ `ProfileCard` ដែលបង្ហាញរូបភាព Avatar, ឈ្មោះ (Name), អ៊ីមែល (Email), និងជំនាញ (Skills)។
 
-**Props** (short for _properties_) are arguments passed from a parent component down to a child component.
-
-- Props allow components to be dynamic and reusable.
-- **Props are READ-ONLY (immutable)**: A child component must never modify the props it receives.
-
-#### Passing and Destructuring Props:
+<details>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
 
 ```jsx
-// 1. Child Component: Destructuring props directly in function parameters
-function ProductCard({ title, price, inStock }) {
-  return (
-    <div className="border p-4 rounded-lg shadow-sm">
-      <h3 className="text-xl font-bold">{title}</h3>
-      <p className="text-gray-600">Price: ${price}</p>
-      <span className={inStock ? "text-green-600" : "text-red-600"}>
-        {inStock ? "In Stock" : "Out of Stock"}
-      </span>
-    </div>
-  );
-}
-
-// 2. Parent Component: Passing props to the child
-function ProductList() {
-  return (
-    <div className="grid grid-cols-2 gap-4">
-      <ProductCard title="Wireless Mouse" price={25} inStock={true} />
-      <ProductCard title="Mechanical Keyboard" price={85} inStock={false} />
-    </div>
-  );
-}
-```
-
-#### Special Prop: `children`
-
-The `children` prop represents everything placed between the opening and closing tag of a component:
-
-```jsx
-function Container({ children }) {
-  return (
-    <div className="max-w-4xl mx-auto p-6 bg-white shadow">{children}</div>
-  );
-}
-
-// Usage:
-<Container>
-  <h1>Title Inside Container</h1>
-  <p>Paragraph inside container</p>
-</Container>;
-```
-
----
-
-### What is State? (`useState`)
-
-**State** is a component's private memory. Unlike regular JavaScript variables, when state changes, **React automatically re-renders the component** to update the UI on screen.
-
-#### Why regular variables don't work for UI:
-
-```javascript
-// ❌ WRONG: UI will NOT update on screen
-let count = 0;
-function handleClick() {
-  count++; // count changes in memory, but React has no idea to redraw the screen!
-}
-```
-
-```jsx
-// ✅ CORRECT: React knows to redraw the component
-import { useState } from "react";
-
-function Counter() {
-  const [count, setCount] = useState(0); // [currentValue, updateFunction]
-
-  return (
-    <button onClick={() => setCount(count + 1)}>Clicked {count} times</button>
-  );
-}
-```
-
----
-
-### State vs Props Comparison
-
-| Feature        | Props                                   | State                                        |
-| -------------- | --------------------------------------- | -------------------------------------------- |
-| **Definition** | Data passed from parent to child        | Data managed inside the component itself     |
-| **Mutability** | **Read-Only** (Immutable)               | **Mutable** via its `setState` function      |
-| **Scope**      | Controlled by parent                    | Controlled by local component                |
-| **Purpose**    | Configure child components              | Handle dynamic user input, toggles, API data |
-| **Re-render**  | Changing props triggers child re-render | Changing state triggers component re-render  |
-
----
-
-## 2. React Hooks Deep Dive
-
-### 1. `useState`: Managing Component Memory
-
-#### A. Primitive State (Strings, Numbers, Booleans)
-
-```jsx
-const [name, setName] = useState("John");
-const [isOpen, setIsOpen] = useState(false);
-
-// Toggle boolean
-setIsOpen((prev) => !prev);
-```
-
-#### B. Object State (The Spread Operator Rule)
-
-> ⚠️ **Golden Rule**: Never mutate state directly (`user.age = 26` is forbidden). Always create a copy using the spread operator (`...`).
-
-```jsx
-const [user, setUser] = useState({ name: "Alex", age: 25, city: "Phnom Penh" });
-
-// Update one field while keeping the rest:
-function updateAge() {
-  setUser((prevUser) => ({
-    ...prevUser, // copies name & city
-    age: prevUser.age + 1, // overwrites age
-  }));
-}
-```
-
-#### C. Array State (Adding, Removing, Updating items)
-
-```jsx
-const [tasks, setTasks] = useState(["Task 1", "Task 2"]);
-
-// 1. Add item:
-const addTask = (newTask) => setTasks([...tasks, newTask]);
-
-// 2. Remove item (using filter):
-const deleteTask = (indexToRemove) => {
-  setTasks(tasks.filter((_, index) => index !== indexToRemove));
-};
-
-// 3. Update item (using map):
-const updateTask = (indexToUpdate, newText) => {
-  setTasks(tasks.map((task, i) => (i === indexToUpdate ? newText : task)));
-};
-```
-
----
-
-### 2. `useEffect`: Handling Side Effects & APIs
-
-**Side Effects** are operations that affect things outside the component: fetching data from an API, subscribing to websockets, setting timers, or manually changing DOM title.
-
-#### Anatomy of `useEffect`:
-
-```javascript
-useEffect(
-  () => {
-    // 1. Code to run for side effect
-
-    return () => {
-      // 2. Optional: Cleanup function (runs when component unmounts or before re-running)
-    };
-  },
-  [
-    /* 3. Dependency Array */
-  ],
-);
-```
-
-#### The 3 Dependency Array Behaviors:
-
-1. **No array (`useEffect(fn)`)**: Runs after **every single render** (rarely desired).
-2. **Empty array (`useEffect(fn, [])`)**: Runs **only once** when the component first mounts (ideal for fetching initial data).
-3. **With dependencies (`useEffect(fn, [id, search])`)**: Runs on mount AND **whenever any value in the array changes**.
-
-#### Complete API Data Fetching Pattern:
-
-```jsx
-import { useState, useEffect } from "react";
-
-function UserProfile({ userId }) {
-  const [user, setUser] = useState(null);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(null);
-
-  useEffect(() => {
-    setLoading(true);
-    setError(null);
-
-    fetch(`https://jsonplaceholder.typicode.com/users/${userId}`)
-      .then((res) => {
-        if (!res.ok) throw new Error("Failed to load user");
-        return res.json();
-      })
-      .then((data) => {
-        setUser(data);
-        setLoading(false);
-      })
-      .catch((err) => {
-        setError(err.message);
-        setLoading(false);
-      });
-  }, [userId]); // Re-fetch whenever `userId` changes!
-
-  if (loading)
-    return <div className="p-4 text-blue-500">Loading user data...</div>;
-  if (error) return <div className="p-4 text-red-500">Error: {error}</div>;
-
-  return (
-    <div className="p-4 border rounded">
-      <h2 className="text-xl font-bold">{user.name}</h2>
-      <p className="text-gray-600">Email: {user.email}</p>
-      <p className="text-gray-600">City: {user.address.city}</p>
-    </div>
-  );
-}
-
-export default UserProfile;
-```
-
----
-
-## 3. React Router DOM (Complete Guide)
-
-### Why React Router? (SPA vs MPA)
-
-- **Traditional Multi-Page App (MPA)**: Clicking a link requests a brand-new HTML page from the server. The entire browser refreshes.
-- **Single Page Application (SPA)**: React Router intercepts link clicks, swaps components in JavaScript instantly, and updates the URL **without refreshing the page**.
-
----
-
-### Step 1: Installation & Setup
-
-```bash
-npm i react-router-dom
-```
-
-Wrap `<App />` inside `<BrowserRouter>` in your root file:
-
-```jsx
-// src/main.jsx
-import React from "react";
-import ReactDOM from "react-dom/client";
-import { BrowserRouter } from "react-router-dom";
-import App from "./App";
-import "./index.css";
-
-ReactDOM.createRoot(document.getElementById("root")).render(
-  <React.StrictMode>
-    <BrowserRouter>
-      <App />
-    </BrowserRouter>
-  </React.StrictMode>,
-);
-```
-
----
-
-### Step 2: Defining Routes in `App.jsx`
-
-```jsx
-// src/App.jsx
-import { Routes, Route } from "react-router-dom";
-import Header from "./Navigetions/Header";
-import { HeroPage, AboutPage, ContactPage } from "./components";
-import Material from "./components/Material";
-import MaterailDetails from "./components/MaterailDetails";
-import NotFound from "./components/NotFound";
-
-function App() {
-  return (
-    <Routes>
-      {/* Parent Layout Route */}
-      <Route path="/" element={<Header />}>
-        {/* Index route matches parent path "/" */}
-        <Route index element={<HeroPage />} />
-
-        {/* Static page routes */}
-        <Route path="about" element={<AboutPage />} />
-        <Route path="contact" element={<ContactPage />} />
-        <Route path="product" element={<Material />} />
-
-        {/* Dynamic route with URL parameter :id */}
-        <Route path="product/:id" element={<MaterailDetails />} />
-      </Route>
-
-      {/* 404 Catch-All Route */}
-      <Route path="*" element={<NotFound />} />
-    </Routes>
-  );
-}
-
-export default App;
-```
-
----
-
-### Step 3: Nested Routes & Shared Layouts with `<Outlet />`
-
-`<Outlet />` acts as a placeholder where child route elements render.
-
-```jsx
-// src/Navigetions/Header.jsx
-import { Outlet } from "react-router-dom";
-import Navbar from "./Navbar";
-import Footer from "./Footer";
-
-function Header() {
-  return (
-    <div className="flex flex-col min-h-screen">
-      {/* Navbar is persistent on all pages */}
-      <Navbar />
-
-      {/* The active child page (HeroPage, About, Product, etc.) renders here */}
-      <main className="flex-grow p-6">
-        <Outlet />
-      </main>
-
-      {/* Footer is persistent on all pages */}
-      <Footer />
-    </div>
-  );
-}
-
-export default Header;
-```
-
----
-
-### Step 4: Dynamic Routes with `useParams()`
-
-Dynamic routes allow you to match patterns like `/product/1`, `/product/99`, `/product/shoes`.
-
-```jsx
-// src/components/MaterailDetails.jsx
-import { useParams, Link } from "react-router-dom";
-import { useEffect, useState } from "react";
-
-function MaterailDetails() {
-  // Extract ":id" parameter from URL
-  const { id } = useParams();
-  const [product, setProduct] = useState(null);
-
-  useEffect(() => {
-    // Fetch details for this specific product ID
-    fetch(`https://dummyjson.com/products/${id}`)
-      .then((res) => res.json())
-      .then((data) => setProduct(data));
-  }, [id]);
-
-  if (!product) return <p>Loading product #{id}...</p>;
-
-  return (
-    <div className="max-w-lg p-6 mx-auto bg-white rounded shadow">
-      <img
-        src={product.thumbnail}
-        alt={product.title}
-        className="w-full h-48 object-cover rounded"
-      />
-      <h1 className="mt-4 text-2xl font-bold">{product.title}</h1>
-      <p className="text-gray-600">{product.description}</p>
-      <p className="mt-2 text-xl font-semibold text-green-600">
-        ${product.price}
-      </p>
-
-      <Link
-        to="/product"
-        className="inline-block mt-4 text-blue-500 hover:underline"
-      >
-        ← Back to all products
-      </Link>
-    </div>
-  );
-}
-
-export default MaterailDetails;
-```
-
----
-
-### Step 5: Navigation (`<Link>`, `<NavLink>`, and `useNavigate`)
-
-#### A. `<Link>` (Prevent Full Reload)
-
-```jsx
-import { Link } from "react-router-dom";
-
-<Link to="/about" className="text-blue-500">
-  Go to About
-</Link>;
-```
-
-#### B. `<NavLink>` (For Active Menu Tabs)
-
-```jsx
-// src/Navigetions/Navbar.jsx
-import { NavLink } from "react-router-dom";
-
-function Navbar() {
-  const getLinkStyle = ({ isActive }) =>
-    isActive
-      ? "text-blue-400 font-bold border-b-2 border-blue-400 pb-1"
-      : "text-gray-300 hover:text-white pb-1";
-
-  return (
-    <nav className="flex gap-6 p-4 bg-gray-900 text-white">
-      <NavLink to="/" className={getLinkStyle}>
-        Home
-      </NavLink>
-      <NavLink to="/about" className={getLinkStyle}>
-        About
-      </NavLink>
-      <NavLink to="/product" className={getLinkStyle}>
-        Products
-      </NavLink>
-      <NavLink to="/contact" className={getLinkStyle}>
-        Contact
-      </NavLink>
-    </nav>
-  );
-}
-
-export default Navbar;
-```
-
-#### C. `useNavigate()` (Programmatic Redirection)
-
-Use `useNavigate()` when navigating inside a function (e.g. after form submission or login):
-
-```jsx
-import { useNavigate } from "react-router-dom";
-
-function LoginForm() {
-  const navigate = useNavigate();
-
-  const handleLogin = (e) => {
-    e.preventDefault();
-    // Simulate successful login
-    alert("Logged in successfully!");
-    navigate("/product"); // Redirect to product catalog
+// src/components/ProfileCard.jsx
+function ProfileCard() {
+  const user = {
+    name: "Kosal Chan",
+    email: "kosal@example.com",
+    skill: "React & Node.js",
+    avatar: "https://via.placeholder.com/100"
   };
 
   return (
-    <form onSubmit={handleLogin}>
-      <button
-        type="submit"
-        className="px-4 py-2 bg-blue-600 text-white rounded"
-      >
-        Log In
-      </button>
-    </form>
+    <div className="flex items-center gap-4 p-4 border rounded-lg bg-gray-50 shadow">
+      <img 
+        src={user.avatar} 
+        alt={user.name} 
+        className="w-16 h-16 rounded-full border"
+      />
+      <div>
+        <h3 className="text-lg font-bold text-gray-800">{user.name}</h3>
+        <p className="text-sm text-gray-500">{user.email}</p>
+        <span className="inline-block mt-1 px-2 py-0.5 text-xs bg-blue-100 text-blue-800 rounded">
+          {user.skill}
+        </span>
+      </div>
+    </div>
+  );
+}
+
+export default ProfileCard;
+```
+</details>
+
+---
+
+## Chapter 2: Props & Children (ការបញ្ជូនទិន្នន័យតាម Props)
+
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**: **Props** (short for *properties*) are read-only data passed from a parent component to a child component (One-way data flow). The special `children` prop allows passing elements or components inside another component.
+- **ភាសាខ្មែរ**: **Props** (Properties) គឺជាទិន្នន័យដែលបញ្ជូនពី Parent Component ទៅកាន់ Child Component (បញ្ជូនពីលើចុះក្រោម)។ Props គឺ **Read-Only (មិនអាចកែប្រែដោយ Child Component បានទេ)**។ ចំណែក `children` គឺជា prop ពិសេសសម្រាប់រុំ Component ឬ Tag ផ្សេងទៀតនៅខាងក្នុង។
+
+### 2. ឧទាហរណ៍កូដ / Code Example
+```jsx
+// 1. Child Component with Destructured Props
+function Button({ text, variant = "primary", onClick }) {
+  const isPrimary = variant === "primary";
+  return (
+    <button
+      onClick={onClick}
+      className={`px-4 py-2 rounded font-medium ${
+        isPrimary ? "bg-blue-600 text-white" : "bg-gray-200 text-gray-800"
+      }`}
+    >
+      {text}
+    </button>
+  );
+}
+
+// 2. Wrapper Component using `children`
+function CardContainer({ title, children }) {
+  return (
+    <div className="border p-4 rounded shadow-sm bg-white">
+      <h3 className="text-lg font-semibold border-b pb-2 mb-3">{title}</h3>
+      <div>{children}</div>
+    </div>
+  );
+}
+
+// 3. Parent Component
+function App() {
+  return (
+    <CardContainer title="User Actions">
+      <p className="mb-2">សូមជ្រើសរើស Action មួយ៖</p>
+      <div className="flex gap-2">
+        <Button text="Save Data" variant="primary" onClick={() => alert("Saved!")} />
+        <Button text="Cancel" variant="secondary" onClick={() => alert("Cancelled!")} />
+      </div>
+    </CardContainer>
   );
 }
 ```
 
 ---
 
-### Step 6: Query Parameters with `useSearchParams`
+### 3. លំហាត់អនុវត្តន៍ / Exercise 2
+**Task**: បង្កើត Component ឈ្មោះ `ProductBadge` ដែលទទួល Props: `title` (string), `price` (number), និង `isSpecial` (boolean)។ ប្រសិនបើ `isSpecial` ជា `true` ត្រូវបង្ហាញ Badge ពណ៌ក្រហម "Discount 20%!".
 
-For filtering and search terms in URL like `/product?category=smartphones&sort=asc`:
+<details>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
 
 ```jsx
-import { useSearchParams } from "react-router-dom";
+// src/components/ProductBadge.jsx
+function ProductBadge({ title, price, isSpecial }) {
+  return (
+    <div className="p-4 border rounded-lg relative bg-white shadow-sm">
+      {isSpecial && (
+        <span className="absolute top-2 right-2 bg-red-500 text-white text-xs px-2 py-1 rounded-full font-bold">
+          Discount 20%!
+        </span>
+      )}
+      <h4 className="text-lg font-bold">{title}</h4>
+      <p className="text-green-600 font-semibold mt-1">${price}</p>
+    </div>
+  );
+}
 
-function ProductFilter() {
-  const [searchParams, setSearchParams] = useSearchParams();
+export default ProductBadge;
+```
+</details>
 
-  const category = searchParams.get("category") || "all";
+---
+
+## Chapter 3: State Management with `useState` (ការគ្រប់គ្រង State)
+
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**: **State** is a component's memory. When state updates, React automatically **re-renders** the component to display the new UI. Always treat state as immutable (do not modify state variables directly).
+- **ភាសាខ្មែរ**: **State** គឺជាអង្គចងចាំផ្ទៃក្នុងរបស់ Component។ នៅពេលតម្លៃរបស់ State ផ្លាស់ប្តូរ React នឹងធ្វើការ **Re-render (គូរ UI ឡើងវិញ)** ដោយស្វ័យប្រវត្តិ។ **ដាច់ខាតកុំកែប្រែ State ដោយផ្ទាល់** ត្រូវប្រើ Setter Function ជានិច្ច (`setCount(...)`)។
+
+### 2. ឧទាហរណ៍កូដ / Code Example
+```jsx
+import { useState } from 'react';
+
+function CounterApp() {
+  // 1. Primitive State
+  const [count, setCount] = useState(0);
+
+  // 2. Object State (Use Spread Operator ...)
+  const [person, setPerson] = useState({ name: "Dara", age: 20 });
+
+  const increaseAge = () => {
+    setPerson(prev => ({ ...prev, age: prev.age + 1 }));
+  };
 
   return (
-    <div>
-      <p>
-        Current Filter: <b>{category}</b>
-      </p>
-      <button onClick={() => setSearchParams({ category: "electronics" })}>
-        Electronics
-      </button>
-      <button onClick={() => setSearchParams({ category: "clothing" })}>
-        Clothing
-      </button>
+    <div className="p-4 space-y-4">
+      <div>
+        <h3 className="text-xl font-bold">Count: {count}</h3>
+        <button 
+          onClick={() => setCount(prev => prev + 1)}
+          className="px-3 py-1 bg-blue-500 text-white rounded mr-2"
+        >
+          + បង្កើន (Increment)
+        </button>
+        <button 
+          onClick={() => setCount(prev => prev - 1)}
+          className="px-3 py-1 bg-red-500 text-white rounded"
+        >
+          - បន្ថយ (Decrement)
+        </button>
+      </div>
+
+      <div className="border-t pt-2">
+        <p>Name: {person.name}, Age: {person.age}</p>
+        <button 
+          onClick={increaseAge}
+          className="px-3 py-1 bg-green-500 text-white rounded mt-1"
+        >
+          ខួបកំណើត (Increase Age)
+        </button>
+      </div>
     </div>
   );
 }
@@ -548,153 +225,114 @@ function ProductFilter() {
 
 ---
 
-### Step 7: Handling 404 (Not Found)
+### 3. លំហាត់អនុវត្តន៍ / Exercise 3
+**Task**: បង្កើត `TodoList` Component ដែលអនុញ្ញាតឱ្យ User បញ្ចូល Task ថ្មីចូលក្នុង Array State និងអាច Delete Task តាមរយៈប៊ូតុង Remove។
+
+<details>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
 
 ```jsx
-// src/components/NotFound.jsx
-import { Link } from "react-router-dom";
+import { useState } from 'react';
 
-function NotFound() {
+function TodoList() {
+  const [todos, setTodos] = useState(["រៀន React", "រៀន Node.js"]);
+  const [input, setInput] = useState("");
+
+  const handleAdd = () => {
+    if (input.trim() === "") return;
+    setTodos([...todos, input]);
+    setInput("");
+  };
+
+  const handleDelete = (indexToDelete) => {
+    setTodos(todos.filter((_, index) => index !== indexToDelete));
+  };
+
   return (
-    <div className="text-center py-20">
-      <h1 className="text-6xl font-extrabold text-red-500">404</h1>
-      <p className="text-xl mt-2 text-gray-700">Oops! Page not found.</p>
-      <Link
-        to="/"
-        className="inline-block mt-4 px-4 py-2 bg-blue-600 text-white rounded"
-      >
-        Return Home
-      </Link>
+    <div className="max-w-md p-4 bg-white border rounded-lg shadow">
+      <h2 className="text-xl font-bold mb-3">បញ្ជីការងារត្រូវធ្វើ (Todo List)</h2>
+      
+      <div className="flex gap-2 mb-4">
+        <input 
+          type="text" 
+          value={input}
+          onChange={(e) => setInput(e.target.value)}
+          placeholder="បញ្ចូលការងារថ្មី..."
+          className="flex-grow p-2 border rounded"
+        />
+        <button 
+          onClick={handleAdd}
+          className="px-4 py-2 bg-blue-600 text-white rounded"
+        >
+          បន្ថែម
+        </button>
+      </div>
+
+      <ul className="space-y-2">
+        {todos.map((todo, index) => (
+          <li key={index} className="flex justify-between items-center p-2 bg-gray-50 border rounded">
+            <span>{todo}</span>
+            <button 
+              onClick={() => handleDelete(index)}
+              className="text-red-500 hover:text-red-700 font-bold"
+            >
+              ✕ លុប
+            </button>
+          </li>
+        ))}
+      </ul>
     </div>
   );
 }
 
-export default NotFound;
+export default TodoList;
 ```
+</details>
 
 ---
 
-## 4. Styling Frameworks
+## Chapter 4: Conditional Rendering & Lists (ការបង្ហាញ UI តាមលក្ខខណ្ឌ និង Lists)
 
-### Tailwind CSS v4
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**: 
+  - **Conditional Rendering**: Showing different UI components based on conditions using `if/else`, Ternary operators (`condition ? <True /> : <False />`), or Logical AND (`condition && <Element />`).
+  - **Lists & Keys**: Rendering arrays using `.map()`. Every rendered item MUST have a unique `key` prop so React can efficiently track DOM changes.
+- **ភាសាខ្មែរ**: 
+  - **Conditional Rendering**: ការកំណត់បង្ហាញ UI ទៅតាមលក្ខខណ្ឌ (ដូចជា Logged in ឬ Logout, Loading ឬ Data) ដោយប្រើ Ternary Operator (`? :`) ឬ `&&`។
+  - **Lists & Keys**: ការទាញទិន្នន័យពី Array មកបង្ហាញជាតារាង ឬបញ្ជីដោយប្រើ `.map()`។ រាល់ Item ទាំងអស់ត្រូវតែមាន `key` prop ដែលជាតម្លៃ Unique (ដូចជា id) ដើម្បីជួយឱ្យ React render បានលឿន។
 
-#### Installation
-
-```bash
-npm i tailwindcss @tailwindcss/vite
-```
-
-#### Setup in `vite.config.js`
-
-```javascript
-import { defineConfig } from "vite";
-import react from "@vitejs/plugin-react";
-import tailwindcss from "@tailwindcss/vite";
-
-export default defineConfig({
-  plugins: [react(), tailwindcss()],
-});
-```
-
-#### Add to `src/index.css`
-
-```css
-@import "tailwindcss";
-```
-
-#### Core Utility Classes to Remember:
-
-- **Layout**: `flex`, `grid`, `grid-cols-3`, `hidden`, `block`
-- **Flexbox**: `items-center`, `justify-between`, `gap-4`
-- **Spacing**: `p-4` (padding), `m-2` (margin), `px-6` (horizontal), `py-3` (vertical)
-- **Responsive**: `sm:`, `md:`, `lg:`, `xl:` (e.g. `w-full md:w-1/2`)
-- **Hover/Focus**: `hover:bg-blue-700`, `focus:ring-2`
-
----
-
-### Bootstrap 5
-
-#### Installation
-
-```bash
-npm i bootstrap
-```
-
-#### Setup in `src/main.jsx`
-
-```javascript
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap/dist/js/bootstrap.bundle.min.js"; // for dropdowns & modals
-```
-
----
-
-## 5. Fullstack PERN Architecture & Roadmap
-
-```
-+-------------------------------------------------------------+
-|                        PERN STACK                           |
-|                                                             |
-|   [ PostgreSQL ]  <--->  [ Express / Node.js ]  <--->  [ React (Vite) ]  |
-|     (Database)              (REST API Backend)          (Frontend UI)     |
-+-------------------------------------------------------------+
-```
-
-### What is PERN?
-
-1. **P - PostgreSQL**: Relational SQL Database (stores tables: users, products, orders).
-2. **E - Express.js**: Fast, minimalist web framework for Node.js (builds API endpoints).
-3. **R - React.js**: Frontend UI library with components, state, and router.
-4. **N - Node.js**: JavaScript runtime that executes code on the backend server.
-
----
-
-### Connecting React to Express API
-
-#### 1. Backend Route in Express (`server.js`):
-
-```javascript
-const express = require("express");
-const cors = require("cors");
-const app = express();
-
-app.use(cors()); // Allow React app to make requests
-app.use(express.json());
-
-app.get("/api/products", async (req, res) => {
-  // Query database (e.g. SELECT * FROM products)
+### 2. ឧទាហរណ៍កូដ / Code Example
+```jsx
+function ProductStatusList() {
+  const isLoggedIn = true;
   const products = [
-    { id: 1, name: "Laptop", price: 999 },
-    { id: 2, name: "Phone", price: 499 },
+    { id: 101, name: "MacBook Pro", inStock: true },
+    { id: 102, name: "Dell XPS", inStock: false },
+    { id: 103, name: "ThinkPad X1", inStock: true },
   ];
-  res.json(products);
-});
-
-app.listen(5000, () => console.log("Server running on port 5000"));
-```
-
-#### 2. Frontend Request in React (`ProductList.jsx`):
-
-```jsx
-import { useState, useEffect } from "react";
-
-function ProductList() {
-  const [products, setProducts] = useState([]);
-
-  useEffect(() => {
-    fetch("http://localhost:5000/api/products")
-      .then((res) => res.json())
-      .then((data) => setProducts(data))
-      .catch((err) => console.error("Error connecting to backend:", err));
-  }, []);
 
   return (
-    <div>
-      <h2>Products from Backend API</h2>
-      <ul>
-        {products.map((p) => (
-          <li key={p.id}>
-            {p.name} - ${p.price}
+    <div className="p-4">
+      {/* 1. Ternary Operator */}
+      <div className="mb-4">
+        {isLoggedIn ? (
+          <p className="text-green-600 font-bold">✅ បានចូលគណនីរួចរាល់ (Welcome Back!)</p>
+        ) : (
+          <button className="px-3 py-1 bg-blue-500 text-white rounded">សូម Login</button>
+        )}
+      </div>
+
+      {/* 2. List Rendering with Keys */}
+      <h3 className="font-bold text-lg mb-2">បញ្ជីផលិតផល៖</h3>
+      <ul className="space-y-2">
+        {products.map((item) => (
+          <li key={item.id} className="p-2 border rounded flex justify-between">
+            <span>{item.name}</span>
+            {item.inStock ? (
+              <span className="text-green-500">មានក្នុងស្តុក (In Stock)</span>
+            ) : (
+              <span className="text-red-500">អស់ពីស្តុក (Out of Stock)</span>
+            )}
           </li>
         ))}
       </ul>
@@ -705,62 +343,726 @@ function ProductList() {
 
 ---
 
-### Recommended Next Topics to Learn
+### 3. លំហាត់អនុវត្តន៍ / Exercise 4
+**Task**: បង្កើត Component ឈ្មោះ `StudentFilter` ដែលមាន List សិស្សដែលមានពិន្ទុ (Score)។ បង្កើតប៊ូតុងមួយសម្រាប់ Switch រវាង "បង្ហាញទាំងអស់ (Show All)" និង "បង្ហាញតែសិស្សដែលប្រឡងជាប់ពិន្ទុ >= 50 (Show Passed Only)"។
 
-1. **Forms & Input Handling**:
-   - Controlled inputs with `value={text}` and `onChange={(e) => setText(e.target.value)}`.
-2. **Global State Management**:
-   - `useContext` / React Context API (for theme switching, global authentication tokens).
-   - Zustand or Redux Toolkit for large apps.
-3. **Node.js & Express REST APIs**:
-   - HTTP Methods (`GET`, `POST`, `PUT`, `DELETE`).
-   - Middleware and CORS.
-4. **PostgreSQL & Database Queries**:
-   - SQL queries (`SELECT`, `INSERT`, `UPDATE`, `DELETE`, `JOIN`).
-   - Connecting PostgreSQL using `pg` / `pg-pool` or ORMs like **Prisma**.
-5. **Authentication**:
-   - User signup/login, password hashing with `bcrypt`, JSON Web Tokens (JWT), protected routes.
+<details>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+
+```jsx
+import { useState } from 'react';
+
+function StudentFilter() {
+  const [showPassedOnly, setShowPassedOnly] = useState(false);
+
+  const students = [
+    { id: 1, name: "Vannak", score: 85 },
+    { id: 2, name: "Chanthy", score: 45 },
+    { id: 3, name: "Sreypov", score: 92 },
+    { id: 4, name: "Bora", score: 38 },
+  ];
+
+  const filteredStudents = showPassedOnly 
+    ? students.filter(s => s.score >= 50) 
+    : students;
+
+  return (
+    <div className="p-4 max-w-md border rounded bg-white shadow">
+      <h2 className="text-xl font-bold mb-3">បញ្ជីពិន្ទុសិស្ស</h2>
+      
+      <button 
+        onClick={() => setShowPassedOnly(!showPassedOnly)}
+        className="mb-4 px-3 py-1.5 bg-indigo-600 text-white rounded text-sm"
+      >
+        {showPassedOnly ? "បង្ហាញទាំងអស់ (Show All)" : "បង្ហាញតែអ្នកជាប់ (Passed Only)"}
+      </button>
+
+      <ul className="space-y-2">
+        {filteredStudents.map(student => (
+          <li key={student.id} className="p-2 border rounded flex justify-between items-center">
+            <span>{student.name}</span>
+            <span className={`font-bold ${student.score >= 50 ? 'text-green-600' : 'text-red-500'}`}>
+              {student.score} ពិន្ទុ {student.score >= 50 ? '(ជាប់)' : '(ធ្លាក់)'}
+            </span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
+export default StudentFilter;
+```
+</details>
 
 ---
 
-## 6. Common React Bugs & How to Fix Them
+## Chapter 5: Form Handling (ការគ្រប់គ្រង Form & User Input)
 
-| Error Message                                          | Cause                                                                                         | How to Fix                                                                                 |
-| ------------------------------------------------------ | --------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------ |
-| `Cannot read properties of undefined (reading 'map')`  | State initial value is `null` or `undefined` before API fetch finishes                        | Set initial state to empty array: `useState([])` or use optional chaining `data?.map(...)` |
-| `Objects are not valid as a React child`               | Tried rendering an object directly: `{user}`                                                  | Render specific properties: `{user.name}` or `{JSON.stringify(user)}`                      |
-| `Too many re-renders. React limits the number...`      | Called function immediately in `onClick` instead of passing callback: `onClick={setCount(1)}` | Change to arrow function: `onClick={() => setCount(1)}`                                    |
-| `Each child in a list should have a unique "key" prop` | Missing `key` attribute in array `.map()`                                                     | Add unique key: `<li key={item.id}>{item.name}</li>`                                       |
-| `React Hook "useState" is called conditionally`        | Hooks placed inside `if` statements or loops                                                  | Always call Hooks at the top level of your component function                              |
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**: In React, form inputs are typically **Controlled Components**, meaning their values are driven by React state and updated via `onChange` events. Form submission is handled with `e.preventDefault()` to stop the browser from refreshing.
+- **ភាសាខ្មែរ**: នៅក្នុង React យើងគ្រប់គ្រង Form តាមរយៈ **Controlled Component** ដោយភ្ជាប់ `value={state}` ជាមួយ State និងប្រើ `onChange` ដើម្បីចាប់ទិន្នន័យពេល User វាយអក្សរ។ នៅពេល Submit Form ត្រូវប្រើ `e.preventDefault()` ដើម្បីកុំឱ្យ Browser reload ទំព័រ។
+
+### 2. ឧទាហរណ៍កូដ / Code Example
+```jsx
+import { useState } from 'react';
+
+function RegisterForm() {
+  const [formData, setFormData] = useState({
+    username: "",
+    email: "",
+    role: "student"
+  });
+
+  // Universal handler for all inputs using name attribute
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData(prev => ({
+      ...prev,
+      [name]: value
+    }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    console.log("Form Submitted:", formData);
+    alert(`ស្វាគមន៍ ${formData.username}!`);
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="p-4 max-w-sm space-y-3 border rounded shadow">
+      <h2 className="text-xl font-bold">ចុះឈ្មោះគណនី (Register)</h2>
+
+      <div>
+        <label className="block text-sm font-medium">ឈ្មោះ (Username):</label>
+        <input 
+          type="text" 
+          name="username"
+          value={formData.username}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded mt-1"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium">អ៊ីមែល (Email):</label>
+        <input 
+          type="email" 
+          name="email"
+          value={formData.email}
+          onChange={handleChange}
+          required
+          className="w-full p-2 border rounded mt-1"
+        />
+      </div>
+
+      <div>
+        <label className="block text-sm font-medium">តួនាទី (Role):</label>
+        <select 
+          name="role" 
+          value={formData.role} 
+          onChange={handleChange}
+          className="w-full p-2 border rounded mt-1"
+        >
+          <option value="student">សិស្ស (Student)</option>
+          <option value="teacher">គ្រូបង្រៀន (Teacher)</option>
+          <option value="developer">Developer</option>
+        </select>
+      </div>
+
+      <button type="submit" className="w-full py-2 bg-blue-600 text-white rounded font-bold">
+        Submit Form
+      </button>
+    </form>
+  );
+}
+```
 
 ---
 
-## 7. Daily Command Line Cheat Sheet
+### 3. លំហាត់អនុវត្តន៍ / Exercise 5
+**Task**: បង្កើត Form សម្រាប់ផ្ទៀងផ្ទាត់ Password (Password Validation)៖ ប្រសិនបើ Password តិចជាង 6 តួអក្សរ ត្រូវបង្ហាញ Error Message ពណ៌ក្រហមថា "Password ត្រូវមានយ៉ាងតិច 6 ខ្ទង់"។
 
-| Task                            | Command                                             | Description                                         |
-| ------------------------------- | --------------------------------------------------- | --------------------------------------------------- |
-| **Create Project**              | `npm create vite@latest my-app -- --template react` | Generates a new Vite React app                      |
-| **Run Dev Server**              | `npm run dev`                                       | Runs local server (usually `http://localhost:5173`) |
-| **Install Everything**          | `npm install`                                       | Installs dependencies from `package.json`           |
-| **Install React Router**        | `npm i react-router-dom`                            | Navigation library for SPA                          |
-| **Install Tailwind CSS v4**     | `npm i tailwindcss @tailwindcss/vite`               | Modern utility-first CSS framework                  |
-| **Install Bootstrap 5**         | `npm i bootstrap`                                   | Component & grid CSS library                        |
-| **Install Axios (HTTP client)** | `npm i axios`                                       | Promise-based HTTP library for APIs                 |
-| **Install Lucide Icons**        | `npm i lucide-react`                                | Clean, modern SVG icon set                          |
-| **Build for Production**        | `npm run build`                                     | Compiles production assets into `/dist` folder      |
-| **Preview Production Build**    | `npm run preview`                                   | Runs local server testing the `/dist` build         |
-| **Git: Commit Changes**         | `git add . && git commit -m "update"`               | Save project history                                |
-| **Git: Push to Remote**         | `git push origin main`                              | Sync with GitHub repository                         |
+<details>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+
+```jsx
+import { useState } from 'react';
+
+function PasswordValidationForm() {
+  const [password, setPassword] = useState("");
+  const [error, setError] = useState("");
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (password.length < 6) {
+      setError("❌ Password ត្រូវមានយ៉ាងតិច 6 ខ្ទង់!");
+      return;
+    }
+    setError("");
+    alert("✅ Password ត្រឹមត្រូវជោគជ័យ!");
+  };
+
+  return (
+    <form onSubmit={handleSubmit} className="p-4 max-w-sm border rounded bg-white">
+      <h3 className="text-lg font-bold mb-2">បញ្ចូល Password</h3>
+      <input 
+        type="password"
+        value={password}
+        onChange={(e) => setPassword(e.target.value)}
+        placeholder="បញ្ចូលពាក្យសម្ងាត់..."
+        className="w-full p-2 border rounded mb-2"
+      />
+      {error && <p className="text-red-500 text-sm mb-2">{error}</p>}
+      <button type="submit" className="w-full py-2 bg-green-600 text-white rounded font-semibold">
+        បញ្ជាក់ (Verify)
+      </button>
+    </form>
+  );
+}
+
+export default PasswordValidationForm;
+```
+</details>
 
 ---
 
-## 🎯 Step-by-Step Feature Workflow
+## Chapter 6: Side Effects & API Fetching with `useEffect` (ការទាញទិន្នន័យពី API)
 
-When building any new feature in your React app:
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**: `useEffect` lets you synchronize a component with external systems (APIs, network requests, subscriptions, DOM manipulation).
+  - `[]` (Empty dependency array): Runs **only once** on component mount.
+  - `[stateVar]`: Runs on mount AND whenever `stateVar` changes.
+  - Cleanup function: Returned inside `useEffect` to clear timers or subscriptions.
+- **ភាសាខ្មែរ**: `useEffect` ប្រើប្រាស់សម្រាប់ដំណើរការ **Side Effects** ដូចជាការទាញទិន្នន័យពី Backend API (Data Fetching), ការកំណត់ Timer, ឬការកែប្រែ DOM។
+  - ប្រសិនបើដាក់ `[]` (Array ទទេ)៖ វានឹងដំណើរការតែ **ម្តងគត់** ពេលបើកទំព័រដំបូង (Mount)។
+  - ប្រសិនបើដាក់ `[id]`៖ វានឹងដំណើរការរាល់ពេលដែលតម្លៃ `id` ផ្លាស់ប្តូរ។
 
-1. **Define your State & Data structure**: What information changes? (`useState`)
-2. **Build your Component UI**: Create `src/components/MyComponent.jsx`.
-3. **Pass Props if reusable**: Break down complex UI into smaller cards/buttons.
-4. **Fetch Data if dynamic**: Connect `useEffect` with `fetch` or `axios`.
-5. **Add Route in `App.jsx`**: `<Route path="/my-feature" element={<MyComponent />} />`.
-6. **Add NavLink in `Navbar.jsx`**: `<NavLink to="/my-feature">My Feature</NavLink>`.
+### 2. ឧទាហរណ៍កូដ / Code Example
+```jsx
+import { useState, useEffect } from 'react';
+
+function UserList() {
+  const [users, setUsers] = useState([]);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    // Fetch data from dummy API
+    fetch('https://jsonplaceholder.typicode.com/users')
+      .then((res) => {
+        if (!res.ok) throw new Error("ទាញទិន្នន័យមិនបានសម្រេច (Failed to fetch)");
+        return res.json();
+      })
+      .then((data) => {
+        setUsers(data);
+        setLoading(false);
+      })
+      .catch((err) => {
+        setError(err.message);
+        setLoading(false);
+      });
+  }, []); // Run once on mount
+
+  if (loading) return <p className="p-4 text-blue-500 font-bold">កំពុងទាញទិន្នន័យ (Loading...)...</p>;
+  if (error) return <p className="p-4 text-red-500 font-bold">កំហុស (Error): {error}</p>;
+
+  return (
+    <div className="p-4">
+      <h2 className="text-xl font-bold mb-3">បញ្ជីឈ្មោះ Users ពី API</h2>
+      <ul className="space-y-2">
+        {users.map((user) => (
+          <li key={user.id} className="p-3 border rounded shadow-sm bg-white">
+            <h4 className="font-bold">{user.name}</h4>
+            <p className="text-sm text-gray-500">Email: {user.email} | City: {user.address.city}</p>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+```
+
+---
+
+### 3. លំហាត់អនុវត្តន៍ / Exercise 6
+**Task**: បង្កើត Component ឈ្មោះ `LiveTimer` ដែលប្រើ `useEffect` ដើម្បីបង្ហាញនាឡិការាប់វិនាទី (Timer) កើនឡើងរាល់ 1 វិនាទីម្តង (`setInterval`) ហើយត្រូវមាន Cleanup function (`clearInterval`) នៅពេល Component unmount ដើម្បីកុំឱ្យ memory leak។
+
+<details>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+
+```jsx
+import { useState, useEffect } from 'react';
+
+function LiveTimer() {
+  const [seconds, setSeconds] = useState(0);
+
+  useEffect(() => {
+    // Start interval timer
+    const intervalId = setInterval(() => {
+      setSeconds(prev => prev + 1);
+    }, 1000);
+
+    // Cleanup function: runs when component unmounts
+    return () => {
+      clearInterval(intervalId);
+      console.log("Timer cleared!");
+    };
+  }, []); // Run once
+
+  return (
+    <div className="p-4 border rounded bg-slate-900 text-white inline-block">
+      <h3 className="text-lg font-bold">⏱️ នាឡិការាប់វិនាទី (Timer)</h3>
+      <p className="text-3xl font-mono text-green-400 mt-2">{seconds} វិនាទី</p>
+    </div>
+  );
+}
+
+export default LiveTimer;
+```
+</details>
+
+---
+
+## Chapter 7: React Router DOM (ការរៀបចំ Routing & Navigation)
+
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**: **React Router** enables client-side routing in Single Page Applications (SPAs). It changes the active view and URL without reloading the browser.
+  - `<BrowserRouter>`: Root provider.
+  - `<Routes>` & `<Route>`: Route configuration.
+  - `<Outlet />`: Layout placeholder for child routes.
+  - `useParams()`: Extracts dynamic URL params (`/product/:id`).
+  - `useNavigate()`: Programmatic redirect.
+  - `<NavLink>`: Link with active styling.
+- **ភាសាខ្មែរ**: **React Router** ប្រើសម្រាប់ប្តូរទំព័រនៅក្នុង React SPA ដោយមិនបាច់ Reload Browser ឡើងវិញឡើយ។
+  - `<BrowserRouter>`៖ រុំ App ទាំងមូល។
+  - `<Routes>` និង `<Route>`៖ កំណត់ផ្លូវ (Path) និង Component ដែលត្រូវបង្ហាញ។
+  - `<Outlet />`៖ កន្លែងសម្រាប់បង្ហាញ Child Component នៅក្នុង Layout (Header/Footer)។
+  - `useParams()`៖ សម្រាប់ទាញយក ID ពី URL (ឧ. `/product/:id`)។
+  - `useNavigate()`៖ សម្រាប់ Redirect ទំព័រតាមកូដ (ឧ. Login ជោគជ័យហើយរត់ទៅកាន់ Dashboard)។
+
+### 2. ឧទាហរណ៍កូដ / Code Example
+```jsx
+// 1. Layout Component (src/layouts/MainLayout.jsx)
+import { Outlet, NavLink } from 'react-router-dom';
+
+export function MainLayout() {
+  return (
+    <div className="min-h-screen flex flex-col">
+      <nav className="flex gap-4 p-4 bg-slate-800 text-white">
+        <NavLink 
+          to="/" 
+          className={({ isActive }) => isActive ? "text-blue-400 font-bold underline" : "text-gray-300"}
+        >
+          ទំព័រដើម (Home)
+        </NavLink>
+        <NavLink 
+          to="/products" 
+          className={({ isActive }) => isActive ? "text-blue-400 font-bold underline" : "text-gray-300"}
+        >
+          ផលិតផល (Products)
+        </NavLink>
+      </nav>
+
+      <main className="flex-grow p-6">
+        <Outlet />
+      </main>
+
+      <footer className="p-4 bg-gray-100 text-center text-sm">
+        © 2026 PERN Stack Course. រក្សាសិទ្ធិគ្រប់យ៉ាង។
+      </footer>
+    </div>
+  );
+}
+
+// 2. Dynamic Details Component (src/pages/ProductDetail.jsx)
+import { useParams, useNavigate } from 'react-router-dom';
+
+export function ProductDetail() {
+  const { id } = useParams();
+  const navigate = useNavigate();
+
+  return (
+    <div>
+      <h2 className="text-2xl font-bold">ព័ត៌មានលម្អិតផលិតផល ID: {id}</h2>
+      <p className="mt-2 text-gray-600">អ្នកកំពុងមើលផលិតផលលេខកូដ #{id}</p>
+      <button 
+        onClick={() => navigate("/products")}
+        className="mt-4 px-4 py-2 bg-blue-600 text-white rounded"
+      >
+        ← ត្រឡប់ក្រោយ (Back to Products)
+      </button>
+    </div>
+  );
+}
+```
+
+---
+
+### 3. លំហាត់អនុវត្តន៍ / Exercise 7
+**Task**: រៀបចំ Router នៅក្នុង `App.jsx` ដែលមាន MainLayout រួមមាន Route `/`, `/products`, `/products/:id`, និង Catch-all `path="*"` សម្រាប់បង្ហាញទំព័រ 404 Not Found។
+
+<details>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+
+```jsx
+// src/App.jsx
+import { Routes, Route } from 'react-router-dom';
+import { MainLayout } from './layouts/MainLayout';
+import { ProductDetail } from './pages/ProductDetail';
+
+function Home() { return <h1 className="text-2xl font-bold">សូមស្វាគមន៍មកកាន់ទំព័រដើម!</h1>; }
+function ProductList() { return <h1 className="text-2xl font-bold">បញ្ជីផលិតផលទាំងអស់</h1>; }
+function NotFound() { return <h1 className="text-2xl font-bold text-red-500">404 - រកមិនឃើញទំព័រនេះទេ!</h1>; }
+
+function App() {
+  return (
+    <Routes>
+      <Route path="/" element={<MainLayout />}>
+        <Route index element={<Home />} />
+        <Route path="products" element={<ProductList />} />
+        <Route path="products/:id" element={<ProductDetail />} />
+      </Route>
+      <Route path="*" element={<NotFound />} />
+    </Routes>
+  );
+}
+
+export default App;
+```
+</details>
+
+---
+
+## Chapter 8: Context API for Global State (ការចែករំលែក Global State)
+
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**: **Context API** solves the problem of *Prop Drilling* (passing props through 5-10 component levels). It allows you to share global data (like Authenticated User, Theme, Cart items) directly with any component in the component tree.
+  1. `createContext()`: Creates the Context.
+  2. `<Context.Provider value={...}>`: Supplies the data.
+  3. `useContext(Context)`: Consumes the data in any child component.
+- **ភាសាខ្មែរ**: **Context API** ត្រូវបានបង្កើតឡើងដើម្បីដោះស្រាយបញ្ហា **Prop Drilling** (ការបាញ់ Props កាត់តាម Component ជាច្រើនជាន់)។ Context អនុញ្ញាតឱ្យយើងចែករំលែកទិន្នន័យ Global (ដូចជា User Login, Dark/Light Theme, Cart កន្ត្រកទំនិញ) ទៅកាន់គ្រប់ Component ទាំងអស់ដោយផ្ទាល់។
+
+### 2. ឧទាហរណ៍កូដ / Code Example
+```jsx
+// 1. Create Theme Context (src/context/ThemeContext.jsx)
+import { createContext, useContext, useState } from 'react';
+
+const ThemeContext = createContext();
+
+export function ThemeProvider({ children }) {
+  const [darkMode, setDarkMode] = useState(false);
+
+  const toggleTheme = () => setDarkMode(prev => !prev);
+
+  return (
+    <ThemeContext.Provider value={{ darkMode, toggleTheme }}>
+      {children}
+    </ThemeContext.Provider>
+  );
+}
+
+// Custom hook to consume context easily
+export const useTheme = () => useContext(ThemeContext);
+
+// 2. Consume in any Component
+export function ThemeToggleButton() {
+  const { darkMode, toggleTheme } = useTheme();
+
+  return (
+    <div className={`p-6 ${darkMode ? 'bg-gray-900 text-white' : 'bg-white text-gray-900'}`}>
+      <p>របៀបបច្ចុប្បន្ន៖ <b>{darkMode ? "Dark Mode 🌙" : "Light Mode ☀️"}</b></p>
+      <button 
+        onClick={toggleTheme}
+        className="mt-3 px-4 py-2 bg-indigo-600 text-white rounded font-medium"
+      >
+        ប្តូរ Theme (Toggle)
+      </button>
+    </div>
+  );
+}
+```
+
+---
+
+### 3. លំហាត់អនុវត្តន៍ / Exercise 8
+**Task**: បង្កើត `AuthContext` ដែលផ្ទុក State `user` (`null` ឬ `{ username: "Dara" }`) និង Functions `login(name)` និង `logout()`។ បង្កើត Component មួយដើម្បីសាកល្បង Login និង Logout។
+
+<details>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+
+```jsx
+import { createContext, useContext, useState } from 'react';
+
+const AuthContext = createContext();
+
+export function AuthProvider({ children }) {
+  const [user, setUser] = useState(null);
+
+  const login = (username) => setUser({ username });
+  const logout = () => setUser(null);
+
+  return (
+    <AuthContext.Provider value={{ user, login, logout }}>
+      {children}
+    </AuthContext.Provider>
+  );
+}
+
+export const useAuth = () => useContext(AuthContext);
+
+// Usage Component
+export function AuthStatus() {
+  const { user, login, logout } = useAuth();
+
+  return (
+    <div className="p-4 border rounded bg-slate-50 max-w-sm">
+      {user ? (
+        <div>
+          <p className="text-green-600 font-bold">ស្វាគមន៍, {user.username}! 🎉</p>
+          <button 
+            onClick={logout}
+            className="mt-2 px-3 py-1 bg-red-500 text-white rounded text-sm"
+          >
+            ចាកចេញ (Logout)
+          </button>
+        </div>
+      ) : (
+        <div>
+          <p className="text-gray-600">អ្នកមិនទាន់បាន Login ទេ</p>
+          <button 
+            onClick={() => login("Sophea")}
+            className="mt-2 px-3 py-1 bg-blue-600 text-white rounded text-sm"
+          >
+            ចូលប្រើជា Sophea (Login)
+          </button>
+        </div>
+      )}
+    </div>
+  );
+}
+```
+</details>
+
+---
+
+## Chapter 9: Custom Hooks (ការបង្កើត Hook ផ្ទាល់ខ្លួន)
+
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**: A **Custom Hook** is a JavaScript function whose name starts with `use` (e.g., `useFetch`, `useLocalStorage`) and that can call other React hooks. Custom hooks allow you to extract and reuse stateful logic across multiple components without duplicating code.
+- **ភាសាខ្មែរ**: **Custom Hook** គឺជា JavaScript Function ដែលចាប់ផ្ដើមឈ្មោះដោយពាក្យ `use` (ដូចជា `useFetch`, `useWindowSize`) និងអាចហៅ React Hooks ផ្សេងៗទៀតបាន។ Custom Hook ជួយយើងទាញយក Logic ស្មុគស្មាញយកមកប្រើឡើងវិញ (Reusable Logic) ដោយមិនបាច់សរសេរកូដដដែលៗ។
+
+### 2. ឧទាហរណ៍កូដ: `useFetch` Hook / Code Example
+```jsx
+// src/hooks/useFetch.js
+import { useState, useEffect } from 'react';
+
+export function useFetch(url) {
+  const [data, setData] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  useEffect(() => {
+    let isMounted = true;
+    setLoading(true);
+
+    fetch(url)
+      .then(res => {
+        if (!res.ok) throw new Error("Network response was not ok");
+        return res.json();
+      })
+      .then(result => {
+        if (isMounted) {
+          setData(result);
+          setLoading(false);
+        }
+      })
+      .catch(err => {
+        if (isMounted) {
+          setError(err.message);
+          setLoading(false);
+        }
+      });
+
+    return () => { isMounted = false; };
+  }, [url]);
+
+  return { data, loading, error };
+}
+```
+
+#### How to use `useFetch` in components:
+```jsx
+import { useFetch } from '../hooks/useFetch';
+
+function PostsPage() {
+  const { data: posts, loading, error } = useFetch('https://jsonplaceholder.typicode.com/posts?_limit=5');
+
+  if (loading) return <p>កំពុងទាញទិន្នន័យ...</p>;
+  if (error) return <p className="text-red-500">Error: {error}</p>;
+
+  return (
+    <div>
+      <h2 className="text-xl font-bold mb-2">បញ្ជីអត្ថបទ (Posts)</h2>
+      {posts.map(p => (
+        <div key={p.id} className="p-3 border-b">
+          <h4 className="font-semibold">{p.title}</h4>
+        </div>
+      ))}
+    </div>
+  );
+}
+```
+
+---
+
+### 3. លំហាត់អនុវត្តន៍ / Exercise 9
+**Task**: បង្កើត Custom Hook ឈ្មោះ `useLocalStorage(key, initialValue)` ដែលរក្សាទុក State ទៅក្នុង `localStorage` របស់ Browser ដោយស្វ័យប្រវត្តិ។
+
+<details>
+<summary><b>🔍 ចុចមើលដំណោះស្រាយ / View Answer Solution</b></summary>
+
+```jsx
+// src/hooks/useLocalStorage.js
+import { useState, useEffect } from 'react';
+
+export function useLocalStorage(key, initialValue) {
+  const [value, setValue] = useState(() => {
+    try {
+      const item = window.localStorage.getItem(key);
+      return item ? JSON.parse(item) : initialValue;
+    } catch (error) {
+      console.error(error);
+      return initialValue;
+    }
+  });
+
+  useEffect(() => {
+    try {
+      window.localStorage.setItem(key, JSON.stringify(value));
+    } catch (error) {
+      console.error(error);
+    }
+  }, [key, value]);
+
+  return [value, setValue];
+}
+```
+</details>
+
+---
+
+## Chapter 10: Performance Optimization (`useMemo`, `useCallback`, `React.memo`)
+
+### 1. និយមន័យ និងទ្រឹស្តី / Definition & Concept
+- **English**:
+  - `React.memo`: Prevents a child component from re-rendering if its props have not changed.
+  - `useMemo`: Caches the **result of an expensive calculation** between renders.
+  - `useCallback`: Caches a **function definition** between renders so child components won't re-render unnecessarily.
+- **ភាសាខ្មែរ**:
+  - `React.memo`: ការពារកុំឱ្យ Child Component ធ្វើការ Re-render ប្រសិនបើ Props របស់វាមិនមានការផ្លាស់ប្តូរ។
+  - `useMemo`: ចងចាំ (Cache) **លទ្ធផលនៃការគណនាស្មុគស្មាញ (Expensive Calculation)** ដើម្បីកុំឱ្យគណនាឡើងវិញរាល់ពេល Render។
+  - `useCallback`: ចងចាំ (Cache) **Function Definition** ដើម្បីកុំឱ្យបង្កើត Function ថ្មីរាល់ពេល Render។
+
+### 2. ឧទាហរណ៍កូដ / Code Example
+```jsx
+import { useState, useMemo, useCallback, memo } from 'react';
+
+// 1. Memoized Child Component
+const ChildButton = memo(({ onClick, label }) => {
+  console.log(`Rendered ChildButton: ${label}`);
+  return (
+    <button onClick={onClick} className="px-3 py-1 bg-gray-700 text-white rounded">
+      {label}
+    </button>
+  );
+});
+
+function OptimizationDemo() {
+  const [count, setCount] = useState(0);
+  const [text, setText] = useState("");
+
+  // 2. useMemo: Caches expensive calculation
+  const expensiveResult = useMemo(() => {
+    console.log("កំពុងគណនាទិន្នន័យធំ (Running expensive calculation)...");
+    let total = 0;
+    for (let i = 0; i < 10000000; i++) {
+      total += i;
+    }
+    return total;
+  }, []); // Run once
+
+  // 3. useCallback: Caches function reference
+  const handleReset = useCallback(() => {
+    setCount(0);
+  }, []);
+
+  return (
+    <div className="p-4 space-y-3 border rounded bg-white">
+      <h3 className="font-bold text-lg">Performance Demo</h3>
+      <p>Expensive Result: <b>{expensiveResult}</b></p>
+      <p>Count: <b>{count}</b></p>
+      
+      <button 
+        onClick={() => setCount(count + 1)}
+        className="px-3 py-1 bg-blue-600 text-white rounded mr-2"
+      >
+        + Add Count
+      </button>
+
+      <ChildButton onClick={handleReset} label="Reset Count" />
+
+      <div>
+        <input 
+          type="text" 
+          value={text} 
+          onChange={(e) => setText(e.target.value)} 
+          placeholder="វាយអក្សរតេស្ត re-render..."
+          className="p-2 border rounded w-full mt-2"
+        />
+      </div>
+    </div>
+  );
+}
+```
+
+---
+
+## Chapter 11: Fullstack PERN Roadmap & Best Practices
+
+```
++-------------------------------------------------------------------------+
+|                           PERN FULLSTACK                                |
+|                                                                         |
+|  [ PostgreSQL ]   <--->   [ Express.js / Node ]   <--->   [ React (Vite) ]  |
+|    (Database)                (REST API Server)             (Frontend UI)  |
++-------------------------------------------------------------------------+
+```
+
+### Roadmap to Fullstack PERN Mastery:
+1. **Frontend (React + Vite + Tailwind)**:
+   - Components, State, Hooks (`useState`, `useEffect`, `useContext`, `useCallback`).
+   - React Router for client navigation.
+   - Axios / Fetch for API communication.
+2. **Backend (Node.js + Express.js)**:
+   - RESTful API endpoints (`GET`, `POST`, `PUT`, `DELETE`).
+   - Middleware (CORS, Express JSON body-parser).
+   - JWT Authentication & bcrypt password encryption.
+3. **Database (PostgreSQL)**:
+   - Tables, Primary Keys, Foreign Keys, Relations (`1-to-Many`, `Many-to-Many`).
+   - Using PostgreSQL client library (`pg`) or Prisma ORM.
+
+---
+
+## ⚡ Daily Command Line Summary
+
+| Command | បរិយាយ / Description |
+|---|---|
+| `npm create vite@latest my-app -- --template react` | បង្កើត React App ថ្មីជាមួយ Vite |
+| `npm i react-router-dom` | ដំឡើង React Router សម្រាប់ប្តូរទំព័រ |
+| `npm i tailwindcss @tailwindcss/vite` | ដំឡើង Tailwind CSS v4 |
+| `npm i bootstrap` | ដំឡើង Bootstrap 5 |
+| `npm i axios` | ដំឡើង Axios សម្រាប់ហៅ API |
+| `npm run dev` | បើក Development Server |
+| `npm run build` | Build គម្រោងសម្រាប់ Deploy ទៅ Production |
