@@ -2,28 +2,6 @@
 
 មេរៀន និងការអនុវត្ត React.js ពីកម្រិតដំបូងដល់កម្រិតខ្ពស់ (A comprehensive step-by-step React.js master guide with definitions, practical examples, exercises, and answer solutions in English & Khmer).
 
-[![Live Demo on GitHub Pages](https://img.shields.io/badge/🌐_Fast_Live_Demo-GitHub_Pages-success?style=for-the-badge&logo=github)](https://phearak77.github.io/DailyTasks/#/exercises)
-[![Open in StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/PheaRak77/DailyTasks/tree/master/RouterinReact)
-
----
-
-## ⚡ Instant Online Exercise Demos (មើលលទ្ធផលផ្ទាល់លើទូរស័ព្ទ & កុំព្យូទ័រ)
-
-> 🚀 **Fast 1-Second Loading on All Devices**: Click the **"▶️ Instant View"** link below to test any exercise immediately in your browser or smartphone!
-
-| # | Exercise / លំហាត់ | Topic / ប្រធានបទ | 📖 View Code | 🚀 Instant Live Demo (Phone & PC) |
-|:---:|---|---|:---:|:---:|
-| **Ex 1** | **Profile Card** | Components & JSX | [Read Code](#chapter-1-components--jsx-សមាសភាគ-និង-jsx) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-| **Ex 2** | **Product Badge** | Props & Children | [Read Code](#chapter-2-props--children-ការបញ្ជូនទិន្នន័យតាម-props) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-| **Ex 3** | **Todo List** | State (`useState`) | [Read Code](#chapter-3-state-management-with-usestate-ការគ្រប់គ្រង-state) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-| **Ex 4** | **Student Filter** | Conditional & Lists | [Read Code](#chapter-4-conditional-rendering--lists-ការបង្ហាញ-ui-តាមលក្ខខណ្ឌ-និង-lists) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-| **Ex 5** | **Password Validation** | Form Handling | [Read Code](#chapter-5-form-handling-ការគ្រប់គ្រង-form--user-input) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-| **Ex 6** | **Live Timer** | `useEffect` & Cleanup | [Read Code](#chapter-6-side-effects--api-fetching-with-useeffect--axios-ការទាញទិន្នន័យពី-api) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-| **Ex 7** | **Router & Pages** | React Router DOM | [Read Code](#chapter-7-react-router-dom-ការរៀបចំ-routing--navigation) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-| **Ex 8** | **Auth Context** | Global State Context API | [Read Code](#chapter-8-context-api-for-global-state-ការចែករំលែក-global-state) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-| **Ex 9** | **useLocalStorage / useAxios** | Custom Hooks | [Read Code](#chapter-9-custom-hooks-ការបង្កើត-hook-ផ្ទាល់ខ្លួន) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-| **Ex 10** | **Performance Demo** | `useMemo` & `useCallback` | [Read Code](#chapter-10-performance-optimization-usememo-usecallback-reactmemo) | [▶️ Instant View](https://phearak77.github.io/DailyTasks/#/exercises) |
-
 ---
 
 ## 📑 តារាងមាតិកា / Table of Contents
